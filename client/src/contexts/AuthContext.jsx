@@ -19,6 +19,34 @@ export const AuthProvider = ({ children }) => {
   const login = async (username, password) => {
     setIsLoading(true);
     try {
+      // Simulate server authentication for specific credentials
+      if (username === 'admin@mugonat.com' && password === 'Mugonat#99') {
+        // Simulate server delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Mock successful response
+        const mockUserData = {
+          id: 1,
+          username: 'admin@mugonat.com',
+          role: 'System Administrator',
+          email: 'admin@mugonat.com',
+          name: 'System Administrator',
+          permissions: ['admin', 'read', 'write']
+        };
+        
+        const mockToken = 'mock-jwt-token-' + Date.now();
+        
+        console.log('✅ Simulated login successful, user:', mockUserData);
+        
+        setUser(mockUserData);
+        setToken(mockToken);
+        localStorage.setItem('token', mockToken);
+        localStorage.setItem('user', JSON.stringify(mockUserData));
+        
+        return { success: true, user: mockUserData };
+      }
+      
+      // Simulate server call for other credentials
       const response = await fetch(`${BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {

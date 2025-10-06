@@ -3,19 +3,16 @@ import { useAuth } from '../contexts/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faTachometerAlt, 
-  faUserGraduate, 
-  faChalkboardTeacher, 
-  faSchool, 
-  faBook, 
-  faCalendarCheck, 
-  faFileAlt, 
-  faChartBar, 
-  faCreditCard, 
-  faBus, 
-  faBookOpen, 
   faChartLine, 
+  faExclamationTriangle, 
+  faWater, 
+  faBuilding, 
+  faShieldAlt, 
+  faDollarSign, 
+  faDatabase, 
   faCog,
-  faSignOutAlt
+  faSignOutAlt,
+  faShield
 } from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = ({ open, setOpen }) => {
@@ -23,18 +20,16 @@ const Sidebar = ({ open, setOpen }) => {
 
   const navigation = [
     { name: 'Dashboard', href: '/dashboard', icon: faTachometerAlt },
-    { name: 'Students', href: '/dashboard/students', icon: faUserGraduate },
-    { name: 'Teachers', href: '/dashboard/teachers', icon: faChalkboardTeacher },
-    { name: 'Classes', href: '/dashboard/classes', icon: faSchool },
-    { name: 'Subjects', href: '/dashboard/subjects', icon: faBook },
-    { name: 'Attendance', href: '/dashboard/attendance', icon: faCalendarCheck },
-    { name: 'Exams', href: '/dashboard/exams', icon: faFileAlt },
-    { name: 'Results', href: '/dashboard/results', icon: faChartBar },
-    { name: 'Fees', href: '/dashboard/fees', icon: faCreditCard },
-    { name: 'Transport', href: '/dashboard/transport', icon: faBus },
-    { name: 'Library', href: '/dashboard/library', icon: faBookOpen },
-    { name: 'Reports', href: '/dashboard/reports', icon: faChartLine },
-    { name: 'Settings', href: '/dashboard/settings', icon: faCog },
+    { name: 'RAS', href: '/dashboard/ras', icon: faChartLine },
+    { name: 'Credit Risk', href: '/dashboard/credit-risk', icon: faShieldAlt },
+    { name: 'Interest Risk', href: '/dashboard/interest-risk', icon: faExclamationTriangle },
+    { name: 'Liquidity Gap', href: '/dashboard/liquidity-gap', icon: faWater },
+    { name: 'Capital Plan', href: '/dashboard/capital-plan', icon: faBuilding },
+    { name: 'Liquidity Risk', href: '/dashboard/liquidity-risk', icon: faShieldAlt },
+    { name: 'Market Risk', href: '/dashboard/fx-risk', icon: faDollarSign },
+    { name: 'Financial Performance', href: '/dashboard/financial-performance', icon: faChartLine },
+    { name: 'Input Data', href: '/dashboard/input-data', icon: faDatabase },
+    { name: 'Configurations', href: '/dashboard/configurations', icon: faCog },
   ];
 
   return (
@@ -54,10 +49,10 @@ const Sidebar = ({ open, setOpen }) => {
                {/* Header */}
                <div className="flex h-14 shrink-0 items-center justify-between border-b border-gray-200/50">
                  <div className="flex items-center gap-2">
-                   <div className="h-5 w-5 rounded-lg bg-purple-600 flex items-center justify-center">
-                     <span className="text-white text-xs font-bold">S</span>
+                   <div className="h-5 w-5 rounded-lg bg-blue-600 flex items-center justify-center">
+                     <span className="text-white text-xs font-bold">Q</span>
                    </div>
-                   <h1 className="text-sm font-bold text-gray-900">School Management</h1>
+                   <h1 className="text-sm font-bold text-gray-900">Q-SIGHT ALM</h1>
                  </div>
                  <button 
                    onClick={() => setOpen(false)}
@@ -117,10 +112,10 @@ const Sidebar = ({ open, setOpen }) => {
         <div className="flex grow flex-col gap-y-4 overflow-hidden border-r border-gray-200 bg-gray-200/30 px-4 pb-4">
           <div className="flex h-14 shrink-0 items-center border-b border-gray-200/50">
             <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-lg bg-purple-600 flex items-center justify-center">
-                <span className="text-white text-xs font-bold">S</span>
+              <div className="h-5 w-5 rounded-lg bg-blue-600 flex items-center justify-center">
+                <span className="text-white text-xs font-bold">Q</span>
               </div>
-              <h1 className="text-sm font-bold text-gray-900">School Management</h1>
+              <h1 className="text-sm font-bold text-gray-900">Q-SIGHT ALM</h1>
             </div>
           </div>
           
